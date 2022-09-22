@@ -1,0 +1,16 @@
+*{
+  box-sizing: border-box;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: capitalize;
+}
+header {
+  text-align: center;
+  border-bottom: 2px solid #031f55;
+}
+
+section {
+  margin: 10px auto;
+}
+input[type="number"]{
+  width: 50px;
+}
