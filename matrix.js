@@ -73,17 +73,19 @@ function option() {
     grid-template-columns: repeat(${colb.value},1fr);
     grid-template-rows: repeat(${rowa.value},1fr);
     `;
-    for (let i = 1; i <= rowa.value; i++) {
-      for (let j = 1; j <= cola.value; j++) {
-        let ma = document.getElementById(`a${i}${j}`);
-        let mb = document.getElementById(`b${j}${i}`);
-        let span = document.createElement("span");
-        ma.addEventListener("input", option);
-        mb.addEventListener("input", option);
-        span.textContent = +ma.value - +mb.value;
-        ans.appendChild(span);
+      for (let i = 1; i <= rowa.value; i++) {
+        for (let k = 1; k <= colb.value; k++) {
+          let fv = 0;
+          for (let j = 1; j <= cola.value; j++) {
+            let ma = document.getElementById(`a${i}${j}`);
+            let mb = document.getElementById(`b${j}${k}`);
+            fv += +ma.value * +mb.value;
+          }
+          let span = document.createElement("span");
+          span.textContent = fv;
+          ans.appendChild(span);
+        }
       }
-    }
     }
   }
 }
